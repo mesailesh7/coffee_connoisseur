@@ -4,7 +4,26 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head></Head>
+        <Head>
+          <link
+            rel="preload"
+            href="/fonts/Poppins-Bold.ttf"
+            as="font"
+            crossOrigin="anonymus"
+          ></link>
+          <link
+            rel="preload"
+            href="/fonts/Poppins-Regular.ttf"
+            as="font"
+            crossOrigin="anonymus"
+          ></link>
+          <link
+            rel="preload"
+            href="/fonts/Poppins-SemiBold.ttf"
+            as="font"
+            crossOrigin="anonymus"
+          ></link>
+        </Head>
         <body>
           <Main></Main>
           <NextScript />
