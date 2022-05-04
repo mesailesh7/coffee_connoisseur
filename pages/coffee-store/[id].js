@@ -3,12 +3,12 @@ import Link from "next/link";
 
 import coffeeStoresData from "../../data/coffee-stores.json";
 
-export function getStaticProps() {
-  const param = static.params;
+export function getStaticProps({ staticProps }) {
+  const params = staticProps.params;
   return {
     props: {
       coffeeStore: coffeeStoresData.find((coffeeStore) => {
-        return coffeeStore.id === 0;
+        return coffeeStore.id === params.id;
       }),
     },
   };
