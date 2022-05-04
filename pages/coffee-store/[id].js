@@ -14,6 +14,12 @@ export function getStaticProps() {
   };
 }
 
+export function getStaticPaths() {
+  return {
+    paths: [{ params: { id: "0" } }, { params: { id: `1` } }],
+  };
+}
+
 const coffeeStore = () => {
   const router = useRouter();
   return (
