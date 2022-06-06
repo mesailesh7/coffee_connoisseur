@@ -2,8 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
-import cls from "classnames"
-
+import cls from "classnames";
 
 import coffeeStoresData from "../../data/coffee-stores.json";
 
@@ -44,6 +43,10 @@ const coffeeStore = (props) => {
   }
   const { address, name, neighbourhood, imgUrl } = props.coffeeStore;
 
+  const handleUpvoteButton = () => {
+    console.log("handle upvote");
+  };
+
   return (
     <div className={styles.layout}>
       <Head>
@@ -69,24 +72,26 @@ const coffeeStore = (props) => {
         </div>
         <div className={cls("glass", styles.col2)}>
           <div className={styles.iconWrapper}>
-            <Image src={} width="24" height="24"/>
-          <p className={styles.text}>{address}</p>
+            <Image src="/static/icons/places.svg" width="24" height="24" />
+            <p className={styles.text}>{address}</p>
           </div>
           <div className={styles.iconWrapper}>
-            <Image src={} width="24" height="24"/>
-          <p className={styles.text}>{neighbourhood}</p>
+            <Image src="/static/icons/nearMe.svg" width="24" height="24" />
+            <p className={styles.text}>{neighbourhood}</p>
           </div>
           <div className={styles.iconWrapper}>
-            <Image src={} width="24" height="24"/>
-          <p className={styles.text}>1</p>
+            <Image src="/static/icons/star.svg" width="24" height="24" />
+            <p className={styles.text}>1</p>
           </div>
-        <button className={styles.upvoteButton} onClick={handleUpvoteButton}>
-          Up Vote!
-        </button>
+          <button className={styles.upvoteButton} onClick={handleUpvoteButton}>
+            Up Vote!
+          </button>
         </div>
       </div>
     </div>
   );
 };
+
+// coffee-connoisseur key : fsq3wvHOh0E5CUzYCezzHAUzNVPTrs0BufLZaYKUYsW28f8=
 
 export default coffeeStore;
